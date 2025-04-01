@@ -1,4 +1,11 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:stateless_widget_aufgabe/red_box.dart';
+import 'package:stateless_widget_aufgabe/green_box.dart';
+import 'package:stateless_widget_aufgabe/blue_box.dart';
+import 'package:stateless_widget_aufgabe/hallo_text.dart';
+import 'package:stateless_widget_aufgabe/face_icon.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,12 +29,14 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(8, 40, 0, 20),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("Hallo App Akademie",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25
-                    ),),
+                  child: HelloText()
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 20, 0, 20),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: HelloText()
                 ),
               ),
         
@@ -35,48 +44,31 @@ class MyApp extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.red,
-                    child: Center(
-                      child: FilledButton(
-                        onPressed: () {
-                          print("A was pressed");
-                        }, 
-                        child: Text("A")),
-                    ),
-                  ),
+                  child: RedBox()
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
-                    child: Center(
-                      child: FilledButton(
-                        onPressed: () {
-                          print("B was pressed");
-                        }, 
-                        child: Text("B")),
-                    ),
-                  ),
+                  child: GreenBox()
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.blue,
-                    child: Center(
-                      child: FilledButton(
-                        onPressed: () {
-                          print("C was pressed");
-                        }, 
-                        child: Text("C")),
-                    ),
-                  ),
+                  child: BlueBox()
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RedBox()
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GreenBox()
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: BlueBox()
                 )
               ],
             ),
@@ -86,18 +78,19 @@ class MyApp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  Icons.face,
-                  size: 40,
-                  color: Colors.black,
-                ),
-                Icon(
-                  Icons.face,
-                  size: 40,
-                  color: Colors.black,
-                ),
+                FaceIcon(),
+                FaceIcon()
               ],
-              
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FaceIcon(),
+                FaceIcon()
+              ]
             )
           ],
 
