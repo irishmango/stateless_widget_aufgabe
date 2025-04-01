@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:stateless_widget_aufgabe/red_box.dart';
 import 'package:stateless_widget_aufgabe/green_box.dart';
@@ -90,7 +88,7 @@ class MyApp extends StatelessWidget {
               children: [
                 FaceIcon(),
                 FaceIcon()
-              ]
+              ],
             )
           ],
 
